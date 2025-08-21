@@ -8,11 +8,60 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-   
+    --background: 45 20% 96%;
+    --foreground: 20 14% 4%;
+    --card: 45 20% 96%;
+    --card-foreground: 20 14% 4%;
+    --popover: 45 20% 96%;
+    --popover-foreground: 20 14% 4%;
+    --primary: 16 100% 56%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 60 5% 93%;
+    --secondary-foreground: 24 10% 10%;
+    --muted: 60 5% 93%;
+    --muted-foreground: 25 5% 45%;
+    --accent: 60 5% 93%;
+    --accent-foreground: 24 10% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 20 6% 90%;
+    --input: 20 6% 90%;
+    --ring: 16 100% 56%;
+    --radius: 0.5rem;
+    
+    /* Custom colors for Intercom theme */
+    --color-cream: 45 20% 96%;
+    --color-dark: 20 14% 4%;
+    --color-yellow: 48 100% 67%;
+    --color-blue: 215 84% 56%;
+    --color-green-light: 145 62% 95%;
+    --color-orange-light: 25 95% 95%;
+    --color-teal-lightest: 173 45% 96%;
+    --color-pink-lightest: 330 45% 96%;
+    --color-yellow-lightest: 48 45% 96%;
+    --color-blue-lightest: 215 45% 96%;
   }
 
   .dark {
-
+    --background: 20 14% 4%;
+    --foreground: 0 0% 95%;
+    --card: 20 14% 4%;
+    --card-foreground: 0 0% 95%;
+    --popover: 20 14% 4%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 16 100% 56%;
+    --primary-foreground: 20 14% 4%;
+    --secondary: 12 7% 15%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 12 7% 15%;
+    --muted-foreground: 24 5% 64%;
+    --accent: 12 7% 15%;
+    --accent-foreground: 0 0% 95%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 12 7% 15%;
+    --input: 12 7% 15%;
+    --ring: 16 100% 56%;
   }
 }
 
@@ -23,5 +72,86 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    background-color: hsl(var(--color-cream));
+  }
+
+  /* Custom fonts and utilities */
+  .font-serif {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .bg-cream {
+    background-color: hsl(var(--color-cream));
+  }
+  
+  .text-dark {
+    color: hsl(var(--color-dark));
+  }
+  
+  .bg-nav-light {
+    background-color: hsl(0 0% 100% / 0.9);
+  }
+  
+  .border-nav-light {
+    border-color: hsl(0 0% 0% / 0.25);
+  }
+  
+  .shadow-nav-light-menu {
+    box-shadow: 0 10px 25px -5px hsl(0 0% 0% / 0.1), 0 10px 10px -5px hsl(0 0% 0% / 0.04);
+  }
+  
+  .bg-nav-tray-light {
+    background-color: hsl(0 0% 0% / 0.05);
+  }
+  
+  .text-highlight {
+    background: linear-gradient(to top, transparent 9%, hsl(var(--color-yellow)) 9%, hsl(var(--color-yellow)) 85%, transparent 0);
+  }
+  
+  .bg-green-light {
+    background-color: hsl(var(--color-green-light));
+  }
+  
+  .bg-orange-light {
+    background-color: hsl(var(--color-orange-light));
+  }
+  
+  .bg-blue {
+    background-color: hsl(var(--color-blue));
+  }
+  
+  .dotted-separator {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cpath fill='transparent' d='M0 0h12v12H0z'/%3E%3Ccircle cx='6' cy='6' r='1.5'/%3E%3C/svg%3E");
+  }
+  
+  .backdrop-blur-58 {
+    backdrop-filter: blur(58px);
+  }
+
+  /* Animation classes */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
+  }
+
+  /* Z-index utilities */
+  .z-nav {
+    z-index: 1000;
+  }
+  
+  .z-nav-submenu {
+    z-index: 1100;
   }
 }
